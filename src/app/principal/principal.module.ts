@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { EstilosAngMaterialComponent } from './estilos-ang-material/estilos-ang-material.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { PrincipalModule } from './principal/principal.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EstilosAngMaterialComponent } from './principal/estilos-ang-material/estilos-ang-material.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -20,16 +16,14 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+
 @NgModule({
   declarations: [
-    AppComponent,
-   
+    EstilosAngMaterialComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    PrincipalModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    ReactiveFormsModule,
 
     MatToolbarModule,
     MatButtonModule,
@@ -43,9 +37,24 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatProgressSpinnerModule,
     MatListModule,    
     MatProgressBarModule,
-    MatChipsModule,   
+    MatChipsModule,    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+   exports:[
+    EstilosAngMaterialComponent,
+
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule,        
+    MatProgressSpinnerModule,
+    MatListModule,    
+    MatProgressBarModule,
+    MatChipsModule,    
+   ]
 })
-export class AppModule { }
+export class PrincipalModule { }
